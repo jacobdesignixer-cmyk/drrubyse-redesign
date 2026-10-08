@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David I. Ruby, PE, SE, FASCE | DRubySE — Constructability Consultant & Structural Steel Specialist</title>
+  <meta name="description" content="Official portfolio and constructability engineering legacy of David I. Ruby, PE, SE, FASCE — Sears Tower, John Hancock, Ford Field, Hard Rock Stadium, AISC Design Guide #23 author.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* LIGHT ARCHITECTURAL THEME (DEFAULT) */
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-card-hover: #ffffff;
+      --border-subtle: #e2e8f0;
+      --border-highlight: rgba(234, 88, 12, 0.4);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --steel-orange: #ea580c;
+      --steel-orange-glow: rgba(234, 88, 12, 0.25);
+      --amber-accent: #d97706;
+      --blueprint-accent: #0284c7;
+      --blueprint-bg: rgba(2, 132, 199, 0.08);
+      --blueprint-border: rgba(2, 132, 199, 0.25);
+      --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+      --card-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 8px 16px -4px rgba(234, 88, 12, 0.1);
+      --header-bg: rgba(255, 255, 255, 0.88);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+
+    /* DARK TITANIUM THEME OVERRIDES */
+    html.dark {
+      --bg-base: #080c14;
+      --bg-surface: #0f172a;
+      --bg-card: rgba(18, 26, 46, 0.78);
+      --bg-card-hover: rgba(27, 38, 66, 0.92);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(249, 115, 22, 0.35);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --steel-orange: #f97316;
+      --steel-orange-glow: rgba(249, 115, 22, 0.35);
+      --amber-accent: #f59e0b;
+      --blueprint-accent: #38bdf8;
+      --blueprint-bg: rgba(56, 189, 248, 0.1);
+      --blueprint-border: rgba(56, 189, 248, 0.25);
+      --card-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+      --card-shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 25px rgba(249, 115, 22, 0.15);
+      --header-bg: rgba(8, 12, 20, 0.88);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg-base);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body {
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(234, 88, 12, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(2, 132, 199, 0.04) 0%, transparent 45%),
+        linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      min-height: 100vh;
+    }
+
+    html.dark body {
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    }
+
+    /* Typography */
+    h1, h2, h3, .font-heading {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .font-mono-tech {
+      font-family: 'Space Grotesk', monospace;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px var(--steel-orange-glow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .brand-mark svg {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      color: var(--blueprint-accent);
+      font-family: 'Space Grotesk', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--steel-orange);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--steel-orange);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Theme Toggle Switch */
+    .theme-toggle-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--steel-orange);
+      color: var(--steel-orange);
+      transform: rotate(15deg);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--steel-orange) 0%, #c2410c 100%);
+      color: #ffffff;
+      padding: 0.65rem 1.3rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 4px 16px var(--steel-orange-glow);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(234, 88, 12, 0.45);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding-top: 130px;
+      padding-bottom: 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 9999px;
+      background: rgba(234, 88, 12, 0.08);
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      color: var(--steel-orange);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .hero-badge span.pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--steel-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--steel-orange);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--steel-orange) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, var(--steel-orange) 0%, #c2410c 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: 0 6px 20px var(--steel-orange-glow);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--steel-orange);
+      color: var(--steel-orange);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Stats Bar */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-size: 1.85rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 0.1rem;
+    }
+
+    .stat-number span.accent {
+      color: var(--steel-orange);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--card-shadow);
+      background: var(--bg-surface);
+    }
+
+    .hero-visual-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-visual-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-overlay-tag {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-family: 'Space Grotesk', monospace;
+      color: var(--steel-orange);
+      font-weight: 600;
+    }
+
+    html.dark .hero-overlay-tag {
+      background: rgba(8, 12, 20, 0.85);
+      color: var(--blueprint-accent);
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.75rem;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 60%, transparent 100%);
+      color: #fff;
+    }
+
+    .hero-caption h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+
+    .hero-caption p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    /* Manifesto Quote Box */
+    .manifesto-section {
+      padding: 50px 0;
+    }
+
+    .manifesto-box {
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.06) 0%, var(--bg-surface) 100%);
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .manifesto-box::before {
+      content: "“";
+      position: absolute;
+      top: -30px;
+      right: 40px;
+      font-size: 14rem;
+      font-family: serif;
+      color: rgba(234, 88, 12, 0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .manifesto-quote {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 1.5rem;
+      max-width: 950px;
+    }
+
+    .manifesto-quote mark {
+      background: transparent;
+      color: var(--steel-orange);
+      font-weight: 700;
+    }
+
+    .manifesto-attribution {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ea580c, #c2410c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px var(--steel-orange-glow);
+    }
+
+    .author-info h5 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 0.15rem;
+    }
+
+    .author-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Layout Standards */
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--steel-orange);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--text-main);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    /* Projects Showcase Section */
+    .projects-section {
+      padding: 90px 0;
+    }
+
+    /* Filters */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--steel-orange);
+      color: var(--steel-orange);
+    }
+
+    .filter-btn.active {
+      background: var(--steel-orange);
+      color: #ffffff;
+      border-color: var(--steel-orange);
+      box-shadow: 0 4px 15px var(--steel-orange-glow);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-highlight);
+      box-shadow: var(--card-shadow-hover);
+      background: var(--bg-card-hover);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      height: 230px;
+      overflow: hidden;
+      background: #0f172a;
+      cursor: pointer;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .project-card:hover .card-img-wrap img {
+      transform: scale(1.07);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      color: var(--steel-orange);
+      font-size: 0.72rem;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    html.dark .card-badge {
+      background: rgba(15, 23, 42, 0.88);
+      color: var(--blueprint-accent);
+    }
+
+    .card-zoom-hint {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.25s ease;
+    }
+
+    .project-card:hover .card-zoom-hint {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      font-size: 0.78rem;
+      color: var(--steel-orange);
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+
+    .card-role {
+      font-size: 0.82rem;
+      color: var(--blueprint-accent);
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+    }
+
+    .btn-detail {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s ease;
+    }
+
+    .btn-detail:hover {
+      color: var(--steel-orange);
+    }
+
+    /* Career Timeline */
+    .timeline-section {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .timeline-wrap {
+      position: relative;
+      margin-top: 3rem;
+    }
+
+    .timeline-wrap::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 24px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--steel-orange), var(--blueprint-accent), var(--border-subtle));
+    }
+
+    @media (min-width: 900px) {
+      .timeline-wrap::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.5rem;
+    }
+
+    .timeline-node {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 3px solid var(--steel-orange);
+      box-shadow: 0 0 12px var(--steel-orange-glow);
+      z-index: 2;
+    }
+
+    @media (min-width: 900px) {
+      .timeline-node {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-card {
+      margin-left: 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-3px);
+    }
+
+    @media (min-width: 900px) {
+      .timeline-item:nth-child(odd) .timeline-card {
+        margin-left: 0;
+        margin-right: calc(50% + 40px);
+        text-align: right;
+      }
+      .timeline-item:nth-child(even) .timeline-card {
+        margin-left: calc(50% + 40px);
+      }
+    }
+
+    .timeline-year {
+      display: inline-block;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--steel-orange);
+      background: rgba(234, 88, 12, 0.08);
+      padding: 0.25rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(234, 88, 12, 0.2);
+    }
+
+    .timeline-title {
+      font-size: 1.3rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Design Guide #23 Section */
+    .guide-section {
+      padding: 90px 0;
+    }
+
+    .guide-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 4rem 3.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .guide-book-cover {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: -10px 15px 35px rgba(0, 0, 0, 0.12);
+      transition: transform 0.4s ease;
+    }
+
+    .guide-book-cover:hover {
+      transform: scale(1.03) rotate(-1deg);
+    }
+
+    .guide-book-cover img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .guide-info h3 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .guide-author {
+      font-family: 'Space Grotesk', monospace;
+      color: var(--blueprint-accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-info p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    /* 12 Principles Grid */
+    .principles-header {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .principles-header h4 {
+      font-size: 1.5rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .principle-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .principle-card:hover {
+      background: rgba(234, 88, 12, 0.05);
+      border-color: rgba(234, 88, 12, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .principle-num {
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      color: var(--steel-orange);
+      font-size: 1.1rem;
+      min-width: 28px;
+    }
+
+    .principle-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    /* Awards Section */
+    .awards-section {
+      padding: 90px 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .award-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .award-card:hover {
+      border-color: var(--amber-accent);
+      transform: translateY(-4px);
+    }
+
+    .award-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber-accent), var(--steel-orange));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .award-card:hover::after {
+      opacity: 1;
+    }
+
+    .award-year {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--amber-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .award-name {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .award-org {
+      font-size: 0.85rem;
+      color: var(--blueprint-accent);
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .award-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Leadership Grid */
+    .leadership-section {
+      padding: 70px 0;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .leadership-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .leadership-card:hover {
+      border-color: var(--blueprint-accent);
+      transform: translateY(-4px);
+    }
+
+    .lead-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--blueprint-bg);
+      border: 1px solid var(--blueprint-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--blueprint-accent);
+    }
+
+    .lead-title {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .lead-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 100px 0 60px 0;
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .contact-info h3 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .contact-info p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      transition: all 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-item:hover {
+      background: rgba(234, 88, 12, 0.05);
+      border-color: rgba(234, 88, 12, 0.35);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(234, 88, 12, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--steel-orange);
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+    }
+
+    .contact-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .copy-btn {
+      margin-left: auto;
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      color: var(--steel-orange);
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Consultation Form */
+    .consult-form {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+    }
+
+    .consult-form h4 {
+      font-size: 1.35rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .consult-form p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--steel-orange);
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--steel-orange), #c2410c);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.85rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px var(--steel-orange-glow);
+    }
+
+    .btn-submit:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 3.5rem 0 2rem 0;
+      background: var(--bg-surface);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      max-width: 400px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-links-group h5 {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links-group a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links-group a:hover {
+      color: var(--steel-orange);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    /* Modal / Lightbox */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--steel-orange);
+    }
+
+    .modal-img-container {
+      width: 100%;
+      height: 420px;
+      background: #0f172a;
+      position: relative;
+    }
+
+    .modal-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0f172a;
+    }
+
+    .modal-content-area {
+      padding: 2.25rem;
+    }
+
+    .modal-tag {
+      font-size: 0.8rem;
+      font-family: 'Space Grotesk', monospace;
+      color: var(--steel-orange);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .modal-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--bg-base);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .modal-spec-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+    }
+
+    .modal-spec-val {
+      font-size: 0.95rem;
+      color: var(--blueprint-accent);
+      font-weight: 700;
+    }
+
+    .modal-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-visual-card img {
+        height: 380px;
+      }
+      .guide-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .guide-book-cover {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 2.5rem;
+        gap: 2.5rem;
+      }
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-specs {
+        grid-template-columns: 1fr;
+      }
+      .manifesto-box {
+        padding: 2.5rem 1.75rem;
+      }
+      .guide-container {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 78px;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .mobile-drawer.active {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16M4 20h16M12 4v16M8 4v2M16 4v2M8 18v2M16 18v2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>DRubySE<span style="color:var(--steel-orange)">.com</span></h1>
+          <div class="brand-subtitle">David I. Ruby, PE, SE, FASCE</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Iconic Projects</a></li>
+        <li><a href="#constructability" class="nav-link">Design Guide #23</a></li>
+        <li><a href="#awards" class="nav-link">Awards & Honors</a></li>
+        <li><a href="#leadership" class="nav-link">Leadership</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg id="sunIcon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="#contact" class="nav-cta">
+          <span>Inquire</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#about" class="mobile-nav-link">About & Career</a>
+    <a href="#projects" class="mobile-nav-link">Iconic Projects</a>
+    <a href="#constructability" class="mobile-nav-link">AISC Design Guide #23</a>
+    <a href="#awards" class="mobile-nav-link">Awards & Recognitions</a>
+    <a href="#leadership" class="mobile-nav-link">Industry Impact</a>
+    <a href="#contact" class="mobile-nav-link" style="color:var(--steel-orange)">Contact Dave Ruby</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            AISC Hall of Fame Inductee &bull; J. Lloyd Kimbrough Medalist
+          </div>
+          
+          <h2 class="hero-title">
+            Mastering <br>
+            <span class="gradient-text">Structural Steel</span> &amp; Constructability.
+          </h2>
+          
+          <p class="hero-lead">
+            David I. Ruby, PE, SE, FASCE — Constructability Consultant and Structural Steel Specialist. Six decades of pioneering connection development, erection sequencing, and monumental engineering for the world's most demanding structures.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              <span>Explore Landmark Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#constructability" class="btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+              <span>AISC Design Guide #23</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">60<span class="accent">+</span></div>
+              <div class="stat-label">Years Practice</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">1,450<span class="accent">ft</span></div>
+              <div class="stat-label">Supertalls Engineered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">25k<span class="accent">+</span></div>
+              <div class="stat-label">Tons Erected / Prog.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">12</div>
+              <div class="stat-label">Principles Formulated</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Featured Visual Card -->
+        <div class="hero-visual-card">
+          <img src="assets/images/ford-field.jpg" alt="Ford Field Detroit & David I. Ruby Structural Steel Engineering" onerror="this.src='assets/images/hero-skyline.jpg'">
+          <div class="hero-overlay-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Featured: Ford Field &bull; Detroit, MI
+          </div>
+          <div class="hero-caption">
+            <h4>Ford Field 2,200-Ton Roof Lift</h4>
+            <p>Ground assembly and synchronized strand jack lift engineered by Ruby and Associates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Constructability Manifesto Section -->
+  <section class="manifesto-section">
+    <div class="container">
+      <div class="manifesto-box">
+        <p class="manifesto-quote">
+          “The contractor is <mark>not the enemy</mark>. Only when all stakeholders are involved does everyone profit from the project’s success — on time and within budget!”
+        </p>
+        <div class="manifesto-attribution">
+          <div class="author-avatar">DIR</div>
+          <div class="author-info">
+            <h5>David I. Ruby, PE, SE, FASCE</h5>
+            <p>Founder of Ruby+Associates (A Degenkolb Company) &bull; Author of AISC Design Guide #23</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Biography Section -->
+  <section id="about" class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career History &bull; Thru The Decades</span>
+        <h2 class="section-title">Six Decades of Engineering Groundwork</h2>
+        <p class="section-desc">
+          From early computation for iconic suspension spans to directing structural design for John Portman and founding Ruby and Associates in 1984.
+        </p>
+      </div>
+
+      <div class="timeline-wrap">
+        <!-- 1956-1960 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1956 – 1960</span>
+            <h3 class="timeline-title">American Bridge Division &amp; RPI Roots</h3>
+            <p class="timeline-desc">
+              Began as summer intern structural draftsman with American Bridge Division (ABD), U.S. Steel (1956–59). Upon graduating Rensselaer Polytechnic Institute (BSCE 1960), applied early computer programming and numerical analysis to critical erection/sequence calculations for the <strong>Tagus River Suspension Bridge</strong> in Portugal, closure calculations for the <strong>Astoria-Megler Bridge</strong> in Oregon, and the Cold Spring Canyon Bridge in California.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1962-1965 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1962 – 1965</span>
+            <h3 class="timeline-title">ABD Chicago Inspection Group &amp; Heavy Steel</h3>
+            <p class="timeline-desc">
+              Transferred to Chicago design office and assigned to ABD's national inspection group. Conducted structural evaluations, blast furnace repairs, open hearth ovens, BOP steel facilities, overhead crane runways, ore bridges, rolling mills, and industrial conveyor systems across the United States.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1966-1971 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1966 – 1971</span>
+            <h3 class="timeline-title">The Supertall Revolution &amp; The Chicago Picasso</h3>
+            <p class="timeline-desc">
+              Joined ABD High-Rise Group as Project Engineer. Responsible for connection development, erection sequencing, and derrick support structures for Chicago's 100-story <strong>John Hancock Center</strong> (1,128 ft), the 1,189-foot <strong>Standard Oil Tower</strong> (Aon Center), and the 110-story <strong>Sears Tower</strong> (Willis Tower, 1,451 ft). Also engineered the scale translation and fabrication sizing for <strong>Picasso's 50-foot CorTen steel sculpture</strong> in Chicago.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1972-1977 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1972 – 1977</span>
+            <h3 class="timeline-title">Chief Structural Engineer, John Portman &amp; Associates</h3>
+            <p class="timeline-desc">
+              Directed structural design for architectural landmarks globally, including the <strong>Detroit Renaissance Center</strong>, <strong>World Trade Center in Brussels</strong>, the <strong>Westin Bonaventure Hotel</strong> in Los Angeles, the <strong>Westin Peachtree Plaza Hotel</strong>, and Peachtree Center towers in Atlanta.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1978-1983 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1978 – 1983</span>
+            <h3 class="timeline-title">Broad Corporation &amp; Automotive Design/Build</h3>
+            <p class="timeline-desc">
+              Pioneered modular mezzanines and industrial steel systems in River Rouge, MI for major automotive paint systems, air supply houses, and pollution control facilities during rapid plant re-tooling and vehicle model changeovers.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1984-Present -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">1984 – Present</span>
+            <h3 class="timeline-title">Ruby and Associates &bull; 39+ Years of Excellence</h3>
+            <p class="timeline-desc">
+              Founded Ruby and Associates to pioneer constructability-focused structural steel engineering. Delivered engineering marvels including <strong>Ford Field</strong>, <strong>Hard Rock Stadium</strong>, <strong>Arizona Cardinals Stadium</strong>, <strong>Miami Marlins Park</strong>, <strong>GM M-5 Program</strong>, and <strong>Grosse Ile Toll Bridge</strong>. Ruby+Associates was acquired by Degenkolb Engineers, where Dave remains a senior constructability consultant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Engineering Portfolio</span>
+        <h2 class="section-title">Iconic Projects Thru The Decades</h2>
+        <p class="section-desc">
+          A showcase of historical and mega-scale structural steel accomplishments, featuring verified project photography and engineering specifications.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Projects (21)</button>
+        <button class="filter-btn" data-filter="supertall">Supertall &amp; Architecture</button>
+        <button class="filter-btn" data-filter="stadiums">Mega Stadiums</button>
+        <button class="filter-btn" data-filter="bridges">Bridges &amp; Crossings</button>
+        <button class="filter-btn" data-filter="industrial">Industrial &amp; Healthcare</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- 1. Sears Tower -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Sears Tower (Willis Tower)" 
+             data-loc="Chicago, IL" 
+             data-role="Project Engineer (ABD)"
+             data-specs="110 Stories &bull; 1,451 ft Height &bull; Erection Sequencing"
+             data-img="assets/images/sears-tower.jpg"
+             data-desc="Provided preliminary engineering services to Skidmore, Owings & Merrill (SOM) related to connection development complementary to the proposed erection procedure. Project engineer assisting with connection design, fabrication sequencing, erection stability, and derrick analysis and temporary works for what was the tallest building in the world.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/sears-tower.jpg" alt="Sears Tower Chicago">
+            <span class="card-badge">Supertall</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Chicago, IL &bull; ABD High-Rise Group</div>
+            <h3 class="card-title">Sears Tower (Willis Tower)</h3>
+            <p class="card-text">Connection development, fabrication sequencing, erection stability, and derrick analysis for the 110-story, 1,451-foot landmark.</p>
+            <div class="card-footer">
+              <span class="card-role">Project Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. John Hancock Center -->
+        <div class="project-card" data-category="supertall" 
+             data-title="John Hancock Center (875 N Michigan)" 
+             data-loc="Chicago, IL" 
+             data-role="Project Erection Engineer"
+             data-specs="100 Stories &bull; 1,128 ft &bull; Creeper Derrick Support"
+             data-img="assets/images/john-hancock.jpg"
+             data-desc="Assisted SOM during initial project development in connection details. Project erection engineer responsible for erection stability, sequencing, and multiple creeper derrick analysis and temporary core bracing required to sustain heavy derrick-induced construction loadings on the 100-story structure.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/john-hancock.jpg" alt="John Hancock Building Chicago">
+            <span class="card-badge">Supertall</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Chicago, IL &bull; 100 Stories</div>
+            <h3 class="card-title">John Hancock Center</h3>
+            <p class="card-text">Erection stability, sequencing, creeper derrick engineering, and temporary core bracing analysis.</p>
+            <div class="card-footer">
+              <span class="card-role">Erection Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Standard Oil Tower -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Standard Oil Tower (Aon Center)" 
+             data-loc="Chicago, IL" 
+             data-role="Project Engineer (ABD)"
+             data-specs="1,189 ft Height &bull; High-Rise Tubular Steel"
+             data-img="assets/images/standard-oil.jpg"
+             data-desc="Project engineer responsible for connection design, fabrication sequencing, erection stability, erection sequencing, and derrick analysis and temporary works for the 1,189-foot skyscraper.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/standard-oil.jpg" alt="Standard Oil Tower Chicago">
+            <span class="card-badge">Supertall</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Chicago, IL &bull; 1,189 FT</div>
+            <h3 class="card-title">Standard Oil Tower (Aon)</h3>
+            <p class="card-text">Connection development, fabrication sequencing, erection stability, and derrick support scheme.</p>
+            <div class="card-footer">
+              <span class="card-role">Project Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Hard Rock Stadium -->
+        <div class="project-card" data-category="stadiums" 
+             data-title="Hard Rock Stadium Canopy" 
+             data-loc="Miami, FL" 
+             data-role="Erection Engineering Specialist"
+             data-specs="18,000 Tons Canopy &bull; Zero Shoring Towers &bull; 2018 AISC IDEAS² Award"
+             data-img="assets/images/hard-rock-stadium.jpg"
+             data-desc="18,000-ton structural steel canopy erected entirely above the existing occupied stadium without temporary shoring towers. Ruby's engineered analysis and subsequent erection sequence and procedure received the AISC IDEAS² National Award in 2018.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/hard-rock-stadium.jpg" alt="Hard Rock Stadium Canopy Miami">
+            <span class="card-badge" style="color:var(--amber-accent)">Award Winner</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Miami, FL &bull; AISC IDEAS² Award</div>
+            <h3 class="card-title">Hard Rock Stadium Canopy</h3>
+            <p class="card-text">Erection of an 18,000-ton canopy above existing stadium without shoring towers; revolutionary analysis.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Ford Field Heavy Lift -->
+        <div class="project-card" data-category="stadiums" 
+             data-title="Ford Field Roof Lift" 
+             data-loc="Detroit, MI" 
+             data-role="Erection Engineering & Jacks"
+             data-specs="2,200 Tons &bull; Four 800T Strand Jacks &bull; Lifted in 45 Min"
+             data-img="assets/images/ford-field-lift.jpg"
+             data-desc="Developed the groundbreaking erection procedure including ground assembly and subsequent lift of the 2,200-ton roof structure with connection modifications. Four 800-ton strand jacks and Ruby-designed jacking platforms lifted the massive roof in approximately 45 minutes.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/ford-field-lift.jpg" alt="Ford Field Detroit Roof Lift">
+            <span class="card-badge">Stadium</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; 2,200 Tons</div>
+            <h3 class="card-title">Ford Field Heavy Roof Lift</h3>
+            <p class="card-text">Ground assembly and synchronous 45-minute strand jack lift utilizing custom jacking platforms.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Ford Field Ground Assembly -->
+        <div class="project-card" data-category="stadiums" 
+             data-title="Ford Field Framing Assembly" 
+             data-loc="Detroit, MI" 
+             data-role="Pre-Bid Constructability Consultant"
+             data-specs="90-Foot Lift &bull; 6x 800T Strand Jacks &bull; Pre-Assembled Mechanics"
+             data-img="assets/images/ford-field.jpg"
+             data-desc="Erection procedure conceived and proposed by Ruby prior to bidding and successfully adopted by ADF. Roof trusses, intermediate framing, roof deck, and mechanical fixtures were fully assembled at ground level prior to the 2,200-ton roof assembly 90-foot vertical lift.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/ford-field.jpg" alt="Ford Field Ground Level Assembly">
+            <span class="card-badge">Stadium</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; Ground Assembly</div>
+            <h3 class="card-title">Ford Field Ground Assembly</h3>
+            <p class="card-text">Assembled roof trusses, intermediate framing, and deck on the field floor before 90-ft vertical elevation.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Arizona Cardinals Stadium -->
+        <div class="project-card" data-category="stadiums" 
+             data-title="Arizona Cardinals Stadium (State Farm Stadium)" 
+             data-loc="Glendale, AZ" 
+             data-role="Erection Procedure Consultant"
+             data-specs="3,200 Tons &bull; 125 ft Strand Jack Lift &bull; Movable Roof"
+             data-img="assets/images/cardinals-stadium.jpg"
+             data-desc="Erection procedure consultant for the 125-foot strand jack lift of a massive 3,200-ton roof assembly. Reviewed structural modifications to accommodate the lift, lifting fixtures, assembly procedures, deflection constraints, temporary bracing, and lateral stability.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/cardinals-stadium.jpg" alt="Arizona Cardinals Stadium Roof Lift">
+            <span class="card-badge">Stadium</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Glendale, AZ &bull; 3,200 Tons</div>
+            <h3 class="card-title">Arizona Cardinals Stadium</h3>
+            <p class="card-text">Consultant for 125' strand jack lift of 3,200-ton roof assembly, deflection constraints, and lateral bracing.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Miami Marlins Stadium -->
+        <div class="project-card" data-category="stadiums" 
+             data-title="Miami Marlins Stadium (loanDepot park)" 
+             data-loc="Miami, FL" 
+             data-role="Construction Sequence Consultant"
+             data-specs="Cast-at-Grade Track Members &bull; Movable Roof &bull; Strand Jacks"
+             data-img="assets/images/marlins-park.jpg"
+             data-desc="Retained to review the complex construction sequence and procedures. Primary concrete track support members were cast at grade, then elevated using strand jacks, followed by erection stability analysis and procedures for the movable structural steel roof.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/marlins-park.jpg" alt="Miami Marlins Stadium Erection">
+            <span class="card-badge">Stadium</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Miami, FL &bull; Movable Roof</div>
+            <h3 class="card-title">Miami Marlins Stadium</h3>
+            <p class="card-text">Construction sequence review, cast-at-grade concrete track strand jack lifts, and roof erection stability.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Astoria-Megler Bridge -->
+        <div class="project-card" data-category="bridges" 
+             data-title="Astoria-Megler Bridge" 
+             data-loc="Oregon / Washington" 
+             data-role="ABD Erection Engineer"
+             data-specs="Truss Cantilever Erection &bull; Center Span Closure"
+             data-img="assets/images/astoria-bridge.jpg"
+             data-desc="Calculations for cantilever erection at main supports and erection of center truss span and related temporary works spanning the Columbia River mouth.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/astoria-bridge.jpg" alt="Astoria-Megler Bridge Oregon">
+            <span class="card-badge">Bridge</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Oregon &bull; American Bridge Div.</div>
+            <h3 class="card-title">Astoria-Megler Bridge</h3>
+            <p class="card-text">Cantilever erection at main supports, closure analysis, and center truss temporary works.</p>
+            <div class="card-footer">
+              <span class="card-role">Calculations &amp; Closure</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Tagus River Bridge -->
+        <div class="project-card" data-category="bridges" 
+             data-title="Tagus River Suspension Bridge (Ponte 25 de Abril)" 
+             data-loc="Lisbon, Portugal" 
+             data-role="ABD Erection &amp; Numerical Analyst"
+             data-specs="Suspension Span &bull; Sequenced Deck Erection"
+             data-img="assets/images/tagus-river-bridge.jpg"
+             data-desc="Balanced erection calculations related to sequenced deck span erection and subsequent attachment to the suspension cables across the Tagus River in Lisbon.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/tagus-river-bridge.jpg" alt="Tagus River Bridge Portugal">
+            <span class="card-badge">Bridge</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Lisbon, Portugal &bull; ABD</div>
+            <h3 class="card-title">Tagus River Bridge</h3>
+            <p class="card-text">Balanced erection calculations for sequenced deck span assembly and attachment to main suspension cables.</p>
+            <div class="card-footer">
+              <span class="card-role">Erection Calculations</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Grosse Ile Toll Bridge -->
+        <div class="project-card" data-category="bridges" 
+             data-title="Grosse Ile Toll Bridge" 
+             data-loc="Detroit, MI" 
+             data-role="Lead Bridge Engineer"
+             data-specs="1912 Swing Span Drive &bull; Post-Collision Thru-Truss Replacement"
+             data-img="assets/images/grosse-ile-bridge.jpg"
+             data-desc="Redesigned the original 1912 swing span drive mechanism, operating machinery, and subsequently designed the replacement 150-ft thru-truss approach span following severe collision damage caused by a lake freighter.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/grosse-ile-bridge.jpg" alt="Grosse Ile Toll Bridge Detroit">
+            <span class="card-badge">Bridge</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; Historic Swing Span</div>
+            <h3 class="card-title">Grosse Ile Toll Bridge</h3>
+            <p class="card-text">Redesigned 1912 swing-span drive system and replacement thru-truss span following freighter impact.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. The Chicago Picasso -->
+        <div class="project-card" data-category="supertall" 
+             data-title="The Chicago Picasso" 
+             data-loc="Daley Plaza, Chicago, IL" 
+             data-role="Project Engineer (ABD)"
+             data-specs="50 ft Height &bull; 160 Tons &bull; Cor-Ten Steel"
+             data-img="assets/images/chicago-picasso.jpg"
+             data-desc="Project engineer reviewing Pablo Picasso's original 41.25-inch maquette to construct a 13-foot wooden model used to establish proper dimensions and material sizing for fabrication. Fabricated by American Bridge Division of U.S. Steel, the monument stands 50 feet tall and weighs 160 tons in CorTen weathering steel.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/chicago-picasso.jpg" alt="The Chicago Picasso Sculpture">
+            <span class="card-badge">Public Art</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Daley Plaza &bull; CorTen Steel</div>
+            <h3 class="card-title">The Chicago Picasso</h3>
+            <p class="card-text">Translated Picasso's 41.25" maquette into the 50-ft, 160-ton steel sculpture fabricated by American Bridge.</p>
+            <div class="card-footer">
+              <span class="card-role">Project Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Renaissance Center Detroit -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Detroit Renaissance Center" 
+             data-loc="Detroit, MI" 
+             data-role="Chief Structural Engineer"
+             data-specs="73-Story Center Tower &bull; John Portman &amp; Associates"
+             data-img="assets/images/renaissance-center.jpg"
+             data-desc="As Chief Structural Engineer for John Portman & Associates (Atlanta), directed the structural design of the landmark 73-story hotel tower and surrounding office towers dominating the Detroit riverfront skyline.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/renaissance-center.jpg" alt="Detroit Renaissance Center">
+            <span class="card-badge">High-Rise</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; Portman &amp; Assoc.</div>
+            <h3 class="card-title">Renaissance Center</h3>
+            <p class="card-text">Directed structural design of the massive 73-story central hotel tower and complex four flanking towers.</p>
+            <div class="card-footer">
+              <span class="card-role">Chief Structural Eng.</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Westin Bonaventure Los Angeles -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Westin Bonaventure Hotel" 
+             data-loc="Los Angeles, CA" 
+             data-role="Chief Structural Engineer"
+             data-specs="35 Stories &bull; 5 Cylindrical Towers &bull; Seismic Engineering"
+             data-img="assets/images/westin-bonaventure.jpg"
+             data-desc="Chief Structural Engineer with John Portman and Associates for the iconic five-tower cylindrical hotel in downtown Los Angeles, pioneering complex geometry and seismic structural resilience.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/westin-bonaventure.jpg" alt="Westin Bonaventure Los Angeles">
+            <span class="card-badge">High-Rise</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Los Angeles, CA &bull; Portman &amp; Assoc.</div>
+            <h3 class="card-title">Westin Bonaventure Hotel</h3>
+            <p class="card-text">Chief structural engineering leadership for the famous cylindrical hotel cluster in downtown LA.</p>
+            <div class="card-footer">
+              <span class="card-role">Chief Structural Eng.</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. Blue Cross Blue Shield Vertical Expansion -->
+        <div class="project-card" data-category="industrial" 
+             data-title="Blue Cross Blue Shield Tower Expansion" 
+             data-loc="Chicago, IL" 
+             data-role="Vertical Expansion Engineer"
+             data-specs="20-Story Vertical Add-On &bull; Fully Occupied 30-Story Base"
+             data-img="assets/images/blue-cross-tower.jpg"
+             data-desc="Provided structural analysis and erection engineering for the unprecedented 20-story vertical expansion built directly on top of an occupied, fully functioning 30-story skyscraper in downtown Chicago.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/blue-cross-tower.jpg" alt="Blue Cross Blue Shield Chicago Expansion">
+            <span class="card-badge">Engineering Feat</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Chicago, IL &bull; 20-Story Addition</div>
+            <h3 class="card-title">Blue Cross Blue Shield Tower</h3>
+            <p class="card-text">Engineered the erection and load transfer of a 20-story vertical expansion atop an occupied 30-story building.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. C.S. Mott Children's Hospital Schedule Rescue -->
+        <div class="project-card" data-category="industrial" 
+             data-title="C.S. Mott Children's Hospital" 
+             data-loc="Ann Arbor, MI" 
+             data-role="Constructability / Core Redesign"
+             data-specs="Saved $4,000,000 &bull; Improved Schedule by 8 Weeks"
+             data-img="assets/images/mott-hospital.jpg"
+             data-desc="A catastrophic 12-week schedule bust was corrected by designing an alternate structural steel braced core replacing the original concrete core post-contract while primary steel was already being fabricated. Replacing concrete with structural steel saved $4,000,000 and advanced the schedule by 8 weeks.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/mott-hospital.jpg" alt="Mott Children's Hospital Ann Arbor Core Redesign">
+            <span class="card-badge" style="color:var(--amber-accent)">$4M Cost Saving</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Ann Arbor, MI &bull; Healthcare</div>
+            <h3 class="card-title">Mott Children's Hospital</h3>
+            <p class="card-text">Saved $4 Million and recovered 8 weeks on project schedule by substituting concrete core with structural steel.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17. GM M-5 Body Shop Program -->
+        <div class="project-card" data-category="industrial" 
+             data-title="General Motors M-5 Body Shop Program" 
+             data-loc="US, Canada &amp; Mexico" 
+             data-role="Structural Steel Engineer"
+             data-specs="25,000+ Tons Steel &bull; 4,000,000+ sq ft &bull; 4 Assembly Plants"
+             data-img="assets/images/gm-m5-program.jpg"
+             data-desc="A unique and aggressive industrial program: only two years to design and erect over 25,000 tons of structural steel enclosing over 4,000,000 square feet across four independent manufacturing plants across North America (Mexico, Canada, and the United States).">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/gm-m5-program.jpg" alt="GM M-5 Program Manufacturing Steel">
+            <span class="card-badge">Industrial Mega</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">International &bull; 4,000,000 SQ FT</div>
+            <h3 class="card-title">General Motors M-5 Program</h3>
+            <p class="card-text">25,000 tons designed and erected in 2 years for 4 major automotive plants in US, Canada, and Mexico.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18. Boeing 747 Hangar VE -->
+        <div class="project-card" data-category="industrial" 
+             data-title="Boeing 747 Hangar (Value Engineering)" 
+             data-loc="Detroit, MI" 
+             data-role="VE Redesign Engineer"
+             data-specs="Tonnage Reduction &bull; Economized Bracing &bull; Accelerated Delivery"
+             data-img="assets/images/boeing-hangar.jpg"
+             data-desc="Value engineered hangar redesign created as a competitive option during bidding. The VE redesign reduced overall structural tonnage, simplified erection, and economized bracing details, delivering major schedule and financial benefits.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/boeing-hangar.jpg" alt="Boeing 747 Hangar Detroit">
+            <span class="card-badge">Aviation</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; Aviation Engineering</div>
+            <h3 class="card-title">Boeing 747 Hangar</h3>
+            <p class="card-text">Value engineered redesign reduced tonnage, simplified erection details, and optimized cost and schedule.</p>
+            <div class="card-footer">
+              <span class="card-role">Value Engineering</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19. Douglas DC-10 Hangar -->
+        <div class="project-card" data-category="industrial" 
+             data-title="Douglas DC-10 Hangar" 
+             data-loc="Detroit, MI" 
+             data-role="Design/Build Structural Specialist"
+             data-specs="Design/Build Partnership &bull; Competitive Fabricator Integration"
+             data-img="assets/images/dc10-hangar.jpg"
+             data-desc="As a member of the integrated design/build team, engaged the steel fabricator and erector in reviewing framing options and finalizing design decisions, yielding a hangar highly economical to fabricate and rapidly erect in a competitive market.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/dc10-hangar.jpg" alt="Douglas DC-10 Hangar Detroit">
+            <span class="card-badge">Aviation</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Detroit, MI &bull; Design/Build</div>
+            <h3 class="card-title">Douglas DC-10 Hangar</h3>
+            <p class="card-text">Integrated framing with fabricator and erector to deliver an exceptionally cost-effective hangar structure.</p>
+            <div class="card-footer">
+              <span class="card-role">Ruby and Associates</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20. Embarcadero Center -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Embarcadero Center (Hyatt &amp; Block 230)" 
+             data-loc="San Francisco, CA" 
+             data-role="Project Erection Engineer"
+             data-specs="Atrium Engineering &bull; Connection Details &bull; Temporary Bracing"
+             data-img="assets/images/embarcadero-center.jpg"
+             data-desc="Project erection engineer collaborating on planning with John Portman and Associates. Managed connection design, erection stability analysis, fabrication sequencing, and temporary erection bracing for the dramatic stepped atrium Hyatt Regency and Block 230 Office Tower.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/embarcadero-center.jpg" alt="Embarcadero Center San Francisco">
+            <span class="card-badge">Architecture</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">San Francisco, CA &bull; ABD</div>
+            <h3 class="card-title">Embarcadero Center</h3>
+            <p class="card-text">Project planning with Portman, connection design, erection stability, and temporary erection bracing.</p>
+            <div class="card-footer">
+              <span class="card-role">Erection Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 21. Trust Company of Georgia -->
+        <div class="project-card" data-category="supertall" 
+             data-title="Trust Company of Georgia Tower" 
+             data-loc="Atlanta, GA" 
+             data-role="Project Structural Engineer"
+             data-specs="Building Analysis &bull; Connection Design &bull; Temporary Works"
+             data-img="assets/images/trust-company-georgia.jpg"
+             data-desc="Project engineer responsible for building analysis and design including structural connection details, fabrication sequencing, erection stability, and comprehensive analysis of related temporary works.">
+          <div class="card-img-wrap" onclick="openProjectModal(this)">
+            <img src="assets/images/trust-company-georgia.jpg" alt="Trust Company of Georgia Tower">
+            <span class="card-badge">High-Rise</span>
+            <div class="card-zoom-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">Atlanta, GA &bull; ABD Engineering</div>
+            <h3 class="card-title">Trust Company of Georgia</h3>
+            <p class="card-text">Building analysis and design, connection design, fabrication sequencing, and erection stability.</p>
+            <div class="card-footer">
+              <span class="card-role">Project Engineer</span>
+              <button class="btn-detail" onclick="openProjectModal(this)">
+                <span>Specs</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AISC Design Guide #23 & 12 Principles Section -->
+  <section id="constructability" class="guide-section">
+    <div class="container">
+      <div class="guide-container">
+        <div class="guide-layout">
+          <div class="guide-book-cover">
+            <img src="assets/images/design-guide-23.jpg" alt="AISC Design Guide #23: Constructability of Structural Steel Buildings">
+          </div>
+          
+          <div class="guide-info">
+            <span class="section-tag">Industry Benchmark Publication</span>
+            <h3>AISC Design Guide #23: <br>Constructability of Structural Steel Buildings</h3>
+            <div class="guide-author">Author: David I. Ruby, PE, SE, FASCE &bull; Published by AISC (2008)</div>
+            <p>
+              Nationally recognized by the American Institute of Steel Construction (AISC). The design guide is grounded in the core definition of Constructability established by the Construction Industry Institute (CII) at the University of Texas at Austin:
+            </p>
+            <p style="font-style: italic; color: var(--text-main); border-left: 3px solid var(--steel-orange); padding-left: 1rem; background: var(--bg-base); padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0 8px 8px 0;">
+              “The optimal use of construction knowledge and experience in planning, design, procurement, and field operations to achieve overall project objectives.”
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="https://pardis-elm.ir/wp-content/uploads/2022/05/AISC_Design_Guide_23_Constructability_of_Structural_Steel_Buildings.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                <span>Read Design Guide #23 (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 Principles -->
+        <div class="principles-header">
+          <h4>The 12 Core Principles of Constructability</h4>
+          <p style="color:var(--text-muted); font-size:0.95rem;">As codified by David I. Ruby and the Construction Industry Institute:</p>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card">
+            <div class="principle-num">01</div>
+            <div class="principle-title">Integrated Design Team</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">02</div>
+            <div class="principle-title">Construction Knowledge</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">03</div>
+            <div class="principle-title">Team Communication Skills</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">04</div>
+            <div class="principle-title">Owner's Project Program</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">05</div>
+            <div class="principle-title">Available Resources</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">06</div>
+            <div class="principle-title">External Factors</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">07</div>
+            <div class="principle-title">Corporate Objectives</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">08</div>
+            <div class="principle-title">Means &amp; Methods</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">09</div>
+            <div class="principle-title">Specifications Clarity</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">10</div>
+            <div class="principle-title">Site Constraints &amp; Access</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">11</div>
+            <div class="principle-title">Design &amp; Construction Innovation</div>
+          </div>
+          <div class="principle-card">
+            <div class="principle-num">12</div>
+            <div class="principle-title">Mutually Shared Feedback</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Recognitions Section -->
+  <section id="awards" class="awards-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Industry Honors</span>
+        <h2 class="section-title">Lifetime of Professional Distinction</h2>
+        <p class="section-desc">
+          Honoring exemplary contributions to structural engineering, constructability innovation, and professional service.
+        </p>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-year">2023</div>
+          <h3 class="award-name">Michigan Construction Hall of Fame</h3>
+          <div class="award-org">Distinguished Constructor Inductee</div>
+          <p class="award-desc">Inducted for lifetime service, leadership, and transformative contributions to Michigan's built environment.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">2022</div>
+          <h3 class="award-name">J. Lloyd Kimbrough Award</h3>
+          <div class="award-org">American Institute of Steel Construction (AISC)</div>
+          <p class="award-desc">The highest honor bestowed by AISC, recognizing seminal contributions to structural steel design, constructability doctrine, and erection science.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">2019</div>
+          <h3 class="award-name">Felix A. Anderson Image Award</h3>
+          <div class="award-org">ACEC-MI (American Council of Engineering Companies)</div>
+          <p class="award-desc">Recognizing outstanding contributions advancing the public image and integrity of consulting engineering.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">2018</div>
+          <h3 class="award-name">AISC IDEAS² National Award</h3>
+          <div class="award-org">Hard Rock Stadium Canopy</div>
+          <p class="award-desc">Awarded for the unprecedented 18,000-ton canopy erected above an existing stadium without shoring towers.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">2011</div>
+          <h3 class="award-name">Lifetime Achievement Award</h3>
+          <div class="award-org">American Institute of Steel Construction (AISC)</div>
+          <p class="award-desc">Honored for enduring lifetime leadership, dedication, and constructability advancements across the national steel industry.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">2010</div>
+          <h3 class="award-name">Structural Engineer of the Year</h3>
+          <div class="award-org">Structural Engineers Association of Michigan (SEAMi)</div>
+          <p class="award-desc">Celebrated for professional excellence and visionary service to Michigan's structural engineering community.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-year">1998</div>
+          <h3 class="award-name">Outstanding Individual Engineer in Private Practice</h3>
+          <div class="award-org">Michigan Society of Professional Engineers (MSPE)</div>
+          <p class="award-desc">Recognized for stellar professional practice, business acumen, and ethical leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Professional Impact Section -->
+  <section id="leadership" class="leadership-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Unifying The Profession</span>
+        <h2 class="section-title">Leadership &amp; Institutional Impact</h2>
+        <p class="section-desc">
+          Building bridges not only in steel, but across professional organizations to advance structural engineering nationwide.
+        </p>
+      </div>
+
+      <div class="leadership-grid">
+        <div class="leadership-card">
+          <div class="lead-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="lead-title">Unifying CASE, SEI &amp; NCSEA</h3>
+          <p class="lead-desc">
+            As President of CASE (Coalition of American Structural Engineers), brought together the presidents of ASCE SEI and NCSEA to resolve competing programs and unify the profession into defined focal pillars: CASE on Business, SEI on Technical Training, and NCSEA on Licensure.
+          </p>
+        </div>
+
+        <div class="leadership-card">
+          <div class="lead-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3 class="lead-title">Co-Founder of SEAMi (1997)</h3>
+          <p class="lead-desc">
+            Recognizing the critical need for a dedicated state organization, David Ruby and Gerd Hartung founded the Structural Engineers Association of Michigan (SEAMi), serving as Co-Presidents for the first two years to champion member cohesion and training.
+          </p>
+        </div>
+
+        <div class="leadership-card">
+          <div class="lead-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          </div>
+          <h3 class="lead-title">Ruby+Associates to Degenkolb</h3>
+          <p class="lead-desc">
+            After 39+ years at the helm of Ruby and Associates serving builders and designers, the firm joined Degenkolb Engineers. Dave continues to provide specialized constructability consulting to the industry and remains available to Ruby+Associates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Consultation Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-info">
+          <span class="section-tag">Direct Inquiries</span>
+          <h3>Engage Constructability Expertise</h3>
+          <p>
+            Whether evaluating heavy structural lifts, connection optimization, erection stability, or constructability peer reviews for landmark structural steel projects.
+          </p>
+          
+          <div class="contact-channels">
+            <a href="mailto:dave@drubyse.com" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value">dave@drubyse.com</div>
+              </div>
+              <button class="copy-btn" onclick="copyContact(event, 'dave@drubyse.com')" title="Copy email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </a>
+
+            <a href="tel:2485142677" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Direct Phone</div>
+                <div class="contact-value">248-514-2677</div>
+              </div>
+              <button class="copy-btn" onclick="copyContact(event, '248-514-2677')" title="Copy phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </a>
+
+            <div class="contact-item" style="cursor: default;">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Primary Practice</div>
+                <div class="contact-value">David I. Ruby, PE, SE, LLC &bull; Michigan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <div class="consult-form">
+          <h4>Send a Consultation Message</h4>
+          <p>Direct message to David I. Ruby regarding project advisory, constructability review, or lectures.</p>
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Your Name &amp; Title</label>
+              <input type="text" class="form-input" placeholder="e.g. John Doe, Lead Project Engineer" required id="formName">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-input" placeholder="e.g. jdoe@firm.com" required id="formEmail">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Project Scope / Inquiries</label>
+              <textarea class="form-textarea" placeholder="Describe the structural project or constructability review needed..." required id="formMessage"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Dispatch Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-mark" style="width:36px; height:36px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16M4 20h16M12 4v16M8 4v2M16 4v2M8 18v2M16 18v2"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <h2 style="font-size:1.15rem;">DRubySE<span style="color:var(--steel-orange)">.com</span></h2>
+            </div>
+          </div>
+          <p>
+            David I. Ruby, PE, SE, LLC &bull; Constructability Consultant &amp; Structural Steel Specialist. Dedicated to safe, economical, and schedule-driven engineering solutions.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#about">Career Timeline</a></li>
+            <li><a href="#projects">Landmark Projects</a></li>
+            <li><a href="#constructability">Design Guide #23</a></li>
+            <li><a href="#awards">Honors &amp; Awards</a></li>
+            <li><a href="#leadership">Industry Leadership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Direct Contact</h5>
+          <ul>
+            <li><a href="mailto:dave@drubyse.com">dave@drubyse.com</a></li>
+            <li><a href="tel:2485142677">(248) 514-2677</a></li>
+            <li><a href="https://pardis-elm.ir/wp-content/uploads/2022/05/AISC_Design_Guide_23_Constructability_of_Structural_Steel_Buildings.pdf" target="_blank" rel="noopener">AISC Design Guide #23 PDF</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 David I. Ruby, PE, SE, LLC. All rights reserved.</div>
+        <div>Engineered with precision constructability architectural design.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Lightbox Modal -->
+  <div class="modal-backdrop" id="projectModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="modal-img-container">
+        <img id="modalImage" src="" alt="Project Photo">
+      </div>
+
+      <div class="modal-content-area">
+        <div class="modal-tag" id="modalTag">Project Blueprint</div>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        
+        <div class="modal-specs">
+          <div>
+            <div class="modal-spec-label">Location</div>
+            <div class="modal-spec-val" id="modalLoc">—</div>
+          </div>
+          <div>
+            <div class="modal-spec-label">Ruby's Engineering Role</div>
+            <div class="modal-spec-val" id="modalRole">—</div>
+          </div>
+          <div>
+            <div class="modal-spec-label">Key Specifications</div>
+            <div class="modal-spec-val" id="modalSpecs">—</div>
+          </div>
+        </div>
+
+        <p class="modal-description" id="modalDesc">Detailed structural analysis and context.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" style="position:fixed; bottom:24px; right:24px; background:var(--steel-orange); color:#fff; padding:12px 24px; border-radius:8px; font-weight:600; box-shadow:0 10px 25px rgba(0,0,0,0.25); transform:translateY(100px); opacity:0; transition:all 0.3s cubic-bezier(0.16,1,0.3,1); z-index:9999;">
+    Copied to clipboard!
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Theme Toggle Functionality
+    const htmlEl = document.documentElement;
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Retrieve saved theme or default to 'light' (white version)
+    const savedTheme = localStorage.getItem('druby-theme') || 'light';
+    applyTheme(savedTheme);
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.remove('light');
+        htmlEl.classList.add('dark');
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+      localStorage.setItem('druby-theme', theme);
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = htmlEl.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    });
+
+    // Mobile Drawer Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    menuToggle.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('active');
+      });
+    });
+
+    // Category Filter Functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Project Modal Lightbox
+    const modal = document.getElementById('projectModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalTag = document.getElementById('modalTag');
+    const modalLoc = document.getElementById('modalLoc');
+    const modalRole = document.getElementById('modalRole');
+    const modalSpecs = document.getElementById('modalSpecs');
+    const modalDesc = document.getElementById('modalDesc');
+
+    function openProjectModal(triggerElement) {
+      const card = triggerElement.closest('.project-card');
+      if (!card) return;
+
+      modalImage.src = card.getAttribute('data-img');
+      modalTitle.textContent = card.getAttribute('data-title');
+      modalTag.textContent = card.getAttribute('data-category').toUpperCase();
+      modalLoc.textContent = card.getAttribute('data-loc');
+      modalRole.textContent = card.getAttribute('data-role');
+      modalSpecs.innerHTML = card.getAttribute('data-specs');
+      modalDesc.textContent = card.getAttribute('data-desc');
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnBackdrop(event) {
+      if (event.target === modal) {
+        closeProjectModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeProjectModal();
+      }
+    });
+
+    // Copy to clipboard helper
+    function copyContact(event, text) {
+      event.preventDefault();
+      event.stopPropagation();
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copied "${text}" to clipboard!`);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+      setTimeout(() => {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+      }, 2600);
+    }
+
+    // Consultation form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('formName').value;
+      const email = document.getElementById('formEmail').value;
+      const message = document.getElementById('formMessage').value;
+
+      const subject = encodeURIComponent(`Consultation Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject Scope:\n${message}`);
+      
+      window.location.href = `mailto:dave@drubyse.com?subject=${subject}&body=${body}`;
+      showToast('Opening your email client...');
+    }
+
+    // Header scroll enhancement
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+        header.style.height = '70px';
+      } else {
+        header.style.boxShadow = 'none';
+        header.style.height = '78px';
+      }
+    });
+  </script>
+</body>
+</html>

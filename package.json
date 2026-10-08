@@ -1,0 +1,18 @@
+﻿{
+  "name": "drubyse-redesign",
+  "version": "1.0.0",
+  "description": "Modern redesign of DRubySE.com — David I. Ruby, PE, SE, FASCE Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "constructability",
+    "structural-steel",
+    "engineering",
+    "portfolio",
+    "drubyse"
+  ],
+  "author": "David I. Ruby, PE, SE, FASCE",
+  "license": "MIT"
+}
